@@ -3,7 +3,7 @@ package rotate
 import (
 	"testing"
 
-	"../mcommon"
+	"../../../mcommon"
 )
 
 type Case struct {
@@ -45,4 +45,3 @@ func TestRotate(t *testing.T) {
 		}
 	}
 }
-

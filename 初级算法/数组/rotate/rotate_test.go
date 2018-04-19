@@ -3,7 +3,7 @@ package rotate
 import (
 	"testing"
 
-	"../mcommon"
+	"../../../mcommon"
 )
 
 type Case struct {

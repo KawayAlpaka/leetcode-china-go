@@ -1,7 +1,5 @@
 package rotate
 
-import "fmt"
-
 func rotate(matrix [][]int) {
 	l1 := len(matrix)
 	// var _matrix [][]int
