@@ -36,3 +36,12 @@ func Is2Equal(nums1 [][]int, nums2 [][]int) bool {
 	}
 	return true
 }
+
+// Create2WIntArray 创建一个空的整形二维数组
+func Create2WIntArray(rl int, cl int) [][]int {
+	var r [][]int
+	for i := 0; i < rl; i++ {
+		r = append(r, make([]int, cl))
+	}
+	return r
+}
