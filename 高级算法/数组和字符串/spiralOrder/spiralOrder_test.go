@@ -36,7 +36,7 @@ func TestSpiralOrder(t *testing.T) {
 	for i, c := range cases {
 		result := spiralOrder(c.input)
 		if !mcommon.IsEqual(result, c.expect) {
-			t.Errorf("Error spiralOrder ：index=%d,result=%v,expect=%v", i, result, c.expect)
+			t.Errorf("Error spiralOrder ：index=%d,result=%v,expect=%v \n", i, result, c.expect)
 		}
 	}
 }
