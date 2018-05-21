@@ -9,15 +9,23 @@ import (
 
 func threeSum(nums []int) [][]int {
 	r := [][]int{}
-	var intSlice sort.IntSlice = nums
-	intSlice.Sort()
-	intSlice = mcommon.RemoveDuplicates(intSlice)
-	l := len(intSlice)
+	l := len(nums)
 	fmt.Printf("len: %d \n", l)
 	if l < 3 {
-		intSlice = append(intSlice, intSlice[l-1], intSlice[l-1])
-		l = len(intSlice)
+		return [][]int{}
 	}
+	var intSlice sort.IntSlice = nums
+	intSlice.Sort()
+	intSlice = mcommon.RemoveDuplicates(intSlice, 3)
+	l = len(intSlice)
+	fmt.Printf("RemoveDuplicates len: %d \n", l)
+	if l < 3 {
+		return [][]int{}
+	}
+	// if l < 3 {
+	// 	intSlice = append(intSlice, intSlice[l-1], intSlice[l-1])
+	// 	l = len(intSlice)
+	// }
 	fmt.Printf("%v \n", intSlice)
 
 	for i := 1; i < l-1; i++ {
@@ -26,7 +34,7 @@ func threeSum(nums []int) [][]int {
 		target := -intSlice[i]
 
 		for true {
-			fmt.Printf("low=%d,i=%d,higt=%d \n", low, i, high)
+			// fmt.Printf("low=%d,i=%d,higt=%d \n", low, i, high)
 			if low >= i || high <= i {
 				break
 			}

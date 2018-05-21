@@ -83,12 +83,23 @@ func IntArr2StrArr(arr []int) []string {
 }
 
 // RemoveDuplicates 移除重复元素(有序数组)
-func RemoveDuplicates(a []int) []int {
+// a 有序数组
+// n 允许重复的个数
+func RemoveDuplicates(a []int, n int) []int {
 	r := []int{}
 	len := len(a)
-	for i := 0; i < len; i++ {
-		if i > 0 && a[i-1] == a[i] {
-			continue
+	rCount := 0
+	if len > 0 {
+		r = append(r, a[0])
+	}
+	for i := 1; i < len; i++ {
+		if a[i-1] == a[i] {
+			rCount++
+			if rCount >= n {
+				continue
+			}
+		} else {
+			rCount = 0
 		}
 		r = append(r, a[i])
 	}
